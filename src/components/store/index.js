@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CartButton from "../cartButton";
-import './style.css';
+import CartButton from "../cart";
+import '../style.css';
 
 function Store(props) {
     const [products, setProducts] = useState([]);
