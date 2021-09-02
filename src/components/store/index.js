@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CartButton from "../cart";
-import '../style.css';
+import './style.css';
 
-function Store(props) {
+function Store() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     const [cartTotalItems, setCartTotalItems] = useState(0);
