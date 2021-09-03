@@ -1,13 +1,11 @@
-.menu {
-    background-color: #eeeeee;
-    color: #222831;
-    padding: 20px;
+.navbar button{
+    font-size: 16px;
+    border: none !important;
+    font-weight: 500;
 }
-
-.product {
-    color: #eeeeee;
-    padding: 20px;
-    text-align: center;
+.navbar button i{
+    font-size: 24px;
+    vertical-align: sub;
 }
 
 .productItem {
@@ -35,7 +33,7 @@
 
 .productImage img {
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
 
