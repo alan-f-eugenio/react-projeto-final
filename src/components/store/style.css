@@ -33,3 +33,25 @@
 .modal.show {
     display: block;
 }
+
+.modal.fade {
+    background: #00000080;
+}
+
+.modal .table thead,
+.modal .table tfoot {
+    background: #202428;
+    color: #fff;
+}
+
+.modal .table .cartProdImage {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+
+.modal .table .cartProdImage img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
