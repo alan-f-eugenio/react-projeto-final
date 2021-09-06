@@ -73,7 +73,7 @@ function Store() {
                     }
                 </div>
             </main>
-            <CartModal cart={cart} showCart={showCart} handleCartClick={() => handleCartClick()}  />
+            <CartModal cart={cart} showCartModal={showCartModal} handleCartClick={() => handleCartClick()}  />
         </div>
     )
 }

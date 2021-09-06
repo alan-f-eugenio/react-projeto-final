@@ -45,7 +45,7 @@ function CartModal(props) {
 
     return (
         <div>
-            <div className={`modal fade ${props.showCart}`} onClick={(e) => e.target.classList.contains('show') ? props.handleCartClick() : ''}>
+            <div className={`modal fade ${props.showCartModal}`} onClick={(e) => e.target.classList.contains('show') ? props.handleCartClick() : ''}>
                 <div className="modal-dialog modal-lg modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
