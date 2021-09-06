@@ -6,7 +6,7 @@ import './style.css';
 function Store() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-    const [showCart, setShowCart] = useState('');
+    const [showCartModal, setShowCartModal] = useState('');
     const [cartTotalItems, setCartTotalItems] = useState(0);
     const btnTotal = useRef(null);
 
@@ -31,7 +31,7 @@ function Store() {
     }
 
     function handleCartClick() {
-        setShowCart(() => showCart === 'show' ? '' : 'show');
+        setShowCartModal(() => showCartModal === 'show' ? '' : 'show');
     }
 
     return (

@@ -30,7 +30,7 @@ function CartButton(props) {
 
     return (
         <button className={`btn btn-lg ${props.isActive ? 'btn-outline-danger' : 'btn-outline-light'}`} onClick={() => props.handleCartButonClick()}>
-            <i ref={hoverRef} className={`bi ${props.isActive ? (isHovered ? 'bi-bag-x-fill' : 'bi-bag-x') : isHovered ? 'bi-bag-plus-fill' : 'bi-bag-plus'}`}></i>
+            <i ref={hoverRef} className={`bi ${props.isActive ? (isHovered ? 'bi-bag-x-fill' : 'bi-bag-x') : (isHovered ? 'bi-bag-plus-fill' : 'bi-bag-plus')}`}></i>
         </button>
     );
 }
