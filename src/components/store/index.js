@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CartButton from "../cart";
+import { CartButton, inCart } from "../cart";
 import ConvertCurrency from "../../functions";
 import './style.css';
 
@@ -12,21 +12,11 @@ function Store() {
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(products=> setProducts(products))
-        // async function fetchData() {
-        //     const response = await fetch('https://fakestoreapi.com/products/')
-        //     const products = await response.json();
-        //     setProducts(products);
-        // }
-        // fetchData();
     }, []);
 
     useEffect(() => {
         setCartTotalItems(cart.length);
     }, [cart]);
-
-    function isCart(productId) {
-        return cart.find(id => id === productId);
-    }
 
     function handleClick(productId) {
         const itemIndex = cart.findIndex(id => id === productId)
@@ -52,8 +42,8 @@ function Store() {
                 <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 text-center">
                     {
                         products.map((product) => (
-                            <div className="col mb-5">
-                                <div className="card product h-100 text-white bg-dark shadow" key={product.id}>
+                            <div className="col mb-5" key={product.id}>
+                                <div className="card product h-100 text-white bg-dark shadow" >
                                     <div className="productImage d-block img-thumbnail">
                                         <img className="card-img-top" src={product.image} alt="" />
                                     </div>
@@ -66,7 +56,7 @@ function Store() {
                                                 <div className="card-text"><h5 className="mb-0">{ConvertCurrency(product.price)}</h5></div>
                                             </div>
                                             <div className="col-auto">
-                                                <CartButton isActive={isCart(product.id)} handleButonClick={(event) => { handleClick(product.id) }} />
+                                                <CartButton isActive={inCart({cart: cart, productId: product.id})} handleButonClick={(event) => { handleClick(product.id) }} />
                                             </div>
                                         </div>
                                     </div>
@@ -74,9 +64,6 @@ function Store() {
                             </div>
                         ))
                     }
-                </div>
-                <div className="product">
-
                 </div>
             </main>
         </div>

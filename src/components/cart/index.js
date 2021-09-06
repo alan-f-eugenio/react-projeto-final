@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 
-
+function inCart(props) {
+    return props.cart.find(id => id === props.productId);
+}
 
 function CartButton(props) {
 
@@ -30,9 +32,9 @@ function CartButton(props) {
 
     return (
         <button className={`btn btn-lg ${props.isActive ? 'btn-outline-danger' : 'btn-outline-light'}`} onClick={() => props.handleButonClick()}>
-            {props.isActive ? <i ref={hoverRef} className={`bi ${isHovered ? 'bi-bag-x-fill' : 'bi-bag-x'}`}></i> : <i ref={hoverRef} className={`bi ${isHovered ? 'bi-bag-plus-fill' : 'bi-bag-plus'}`}></i>}
+            <i ref={hoverRef} className={`bi ${props.isActive ? (isHovered ? 'bi-bag-x-fill' : 'bi-bag-x') : isHovered ? 'bi-bag-plus-fill' : 'bi-bag-plus'}`}></i>
         </button>
     );
 }
 
-export default CartButton;
+export { CartButton, inCart };
