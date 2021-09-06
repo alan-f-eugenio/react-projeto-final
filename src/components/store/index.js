@@ -9,12 +9,15 @@ function Store() {
     const [cartTotalItems, setCartTotalItems] = useState(0);
 
     useEffect(() => {
-        async function fetchData() {
-            const response = await fetch('https://fakestoreapi.com/products/')
-            const products = await response.json();
-            setProducts(products);
-        }
-        fetchData();
+        fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(products=> setProducts(products))
+        // async function fetchData() {
+        //     const response = await fetch('https://fakestoreapi.com/products/')
+        //     const products = await response.json();
+        //     setProducts(products);
+        // }
+        // fetchData();
     }, []);
 
     useEffect(() => {
@@ -50,7 +53,7 @@ function Store() {
                     {
                         products.map((product) => (
                             <div className="col mb-5">
-                                <div className="card h-100 text-white bg-dark shadow" key={product.id}>
+                                <div className="card product h-100 text-white bg-dark shadow" key={product.id}>
                                     <div className="productImage d-block img-thumbnail">
                                         <img className="card-img-top" src={product.image} alt="" />
                                     </div>
