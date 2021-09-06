@@ -1,6 +1,6 @@
-# atividade-js-ts
+# react-projeto-final
 
-Atividade avaliativa de React Básico da Pós Dev Fullstack JS - UP 2021
+Projeto desenvolvido como atividade avaliativa de React Básico da Pós Dev Fullstack JS - UP 2021
 
 - A apliação tem como objetivo exibir uma interface minimalista de loja com funcionalidade de adicionar e remover itens do carrinho, bem como visualizar todos os itens presentes no mesmo e a soma do total de valores.
 
