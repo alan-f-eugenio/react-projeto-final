@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CartButton, inCart } from "../cart";
+import { inCart, CartButton, CartModal } from "../cart";
 import ConvertCurrency from "../../functions";
 import './style.css';
 
@@ -66,6 +66,7 @@ function Store() {
                     }
                 </div>
             </main>
+            <CartModal cart={cart} />
         </div>
     )
 }

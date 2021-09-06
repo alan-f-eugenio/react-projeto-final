@@ -5,15 +5,12 @@ function inCart(props) {
 }
 
 function CartButton(props) {
-
     const [hoverRef, isHovered] = useHover();
-
     function useHover() {
         const [value, setValue] = useState(false);
         const ref = useRef(null);
         const handleMouseOver = () => setValue(true);
         const handleMouseOut = () => setValue(false);
-
         useEffect(
             () => {
                 const el = ref.current;
@@ -37,4 +34,24 @@ function CartButton(props) {
     );
 }
 
-export { CartButton, inCart };
+function CartModal(props) {
+    return (
+        <div>
+            <div className="modal fade">
+                <div className="modal-dialog modal-lg">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel">Carrinho</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span>×</span>
+                        </button>
+                    </div>
+                    <div className="modal-content">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export { inCart, CartButton, CartModal };
